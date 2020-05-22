@@ -25,35 +25,35 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
+                <tr *ngFor="let plate of platesList">
                   <th scope="row">
                     <div class="media align-items-center">
                       <a href="javascript:void(0)" class="avatar rounded-circle mr-3">
-                        <img alt="Image placeholder" src="https://www.tasteofhome.com/wp-content/uploads/2018/01/Pork-Tacos-with-Mango-Salsa_EXPS_SDDJ17_198169_B08_11_3b-696x696.jpg">
+                        <img alt="Image placeholder" src="{{plate.url}}">
                       </a>
                       <div class="media-body">
-                        <span class="mb-0 text-sm">Indian Food</span>
+                        <span class="mb-0 text-sm">{{plate.name}}</span>
                       </div>
                     </div>
                   </th>
                   <td>
-                    Indian Food are Good
+                    {{plate.description}}
                   </td>
                   <td>
                     <span class="badge badge-dot mr-4">
-                      <i class="bg-warning"></i> Null
+                      <i class="bg-warning"></i> {{plate.userId}}
                     </span>
                   </td>
                   <td>
                     <div class="d-flex align-items-center">
-                      <span class="mr-2">2019-11-28 8:30 am</span>
+                      <span class="mr-2"> {{plate.createdAt}} </span>
                       <div>
                       </div>
                     </div>
                   </td>
                   <td>
                     <div class="d-flex align-items-center">
-                      <span class="mr-2">2020-05-17 3:29 pm</span>
+                      <span class="mr-2">{{plate.updatedAt}}</span>
                       <div>
                       </div>
                     </div>

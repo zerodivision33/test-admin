@@ -1,4 +1,5 @@
 import { AuthService } from './auth.service';
+import { PlateService } from './plate.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -32,7 +33,7 @@ import { PlatesComponent } from './pages/plates/plates.component';
     AuthLayoutComponent,
     PlatesComponent
   ],
-  providers: [AuthService],
+  providers: [AuthService, PlateService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

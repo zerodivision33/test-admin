@@ -1,3 +1,4 @@
+import { PlateService } from './../../plate.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlatesComponent implements OnInit {
 
-  constructor() { }
+  platesList: any;
+  constructor(private _plateService: PlateService) { 
+    this.platesList = []
+  }
 
-  ngOnInit(): void {
+  ngOnInit(){
+    this._plateService.getPlates()
+      .subscribe(
+        res => this.platesList = res.data,
+        err => console.log(err)
+    )
   }
 
 }
