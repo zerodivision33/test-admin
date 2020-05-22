@@ -6,11 +6,18 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit, OnDestroy {
+
+  loginUserData = {}
   constructor() {}
 
   ngOnInit() {
   }
+  
   ngOnDestroy() {
+  }
+
+  loginUser() {
+    console.log(this.loginUserData)
   }
 
 }
