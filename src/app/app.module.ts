@@ -1,3 +1,4 @@
+import { AuthGuard } from './auth.guard';
 import { AuthService } from './auth.service';
 import { PlateService } from './plate.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -33,7 +34,7 @@ import { PlatesComponent } from './pages/plates/plates.component';
     AuthLayoutComponent,
     PlatesComponent
   ],
-  providers: [AuthService, PlateService],
+  providers: [AuthService, AuthGuard, PlateService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
