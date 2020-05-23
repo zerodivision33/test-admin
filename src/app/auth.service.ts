@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http'
 export class AuthService {
 
   private _registerUrl = "https://mycheffy.herokuapp.com/user/"
-  private _loginUrl = "https://mycheffy.herokuapp.com/user/"
+  private _loginUrl = "https://mycheffy.herokuapp.com/user/login/"
   constructor(private http: HttpClient) { }
   
   registerUser(user) {
