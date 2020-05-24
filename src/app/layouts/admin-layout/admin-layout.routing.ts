@@ -1,3 +1,4 @@
+import { ManagedocsComponent } from '../../pages/managedocs/managedocs.component';
 import { AuthGuard } from './../../auth.guard';
 import { PlatesComponent } from '../../pages/plates/plates.component';
 import { Routes } from '@angular/router';
@@ -14,5 +15,6 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'tables',         component: TablesComponent },
     { path: 'icons',          component: IconsComponent },
     { path: 'maps',           component: MapsComponent },
-    { path: 'plates',         component: PlatesComponent}
+    { path: 'plates',         component: PlatesComponent },
+    { path: 'user-docs',      component: ManagedocsComponent}
 ];

@@ -1,3 +1,4 @@
+import { ManagedocsService } from './managedocs.service';
 import { UserService } from './user.service';
 import { TokenInterceptorService } from './token-interceptor.service';
 import { AuthGuard } from './auth.guard';
@@ -18,7 +19,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app.routing';
 import { ComponentsModule } from './components/components.module';
 import { PlatesComponent } from './pages/plates/plates.component';
-import { ManagedocsComponent } from './managedocs/managedocs.component';
+import { ManagedocsComponent } from './pages/managedocs/managedocs.component';
 
 
 @NgModule({
@@ -38,7 +39,7 @@ import { ManagedocsComponent } from './managedocs/managedocs.component';
     PlatesComponent,
     ManagedocsComponent
   ],
-  providers: [AuthService, AuthGuard, PlateService, UserService, {
+  providers: [AuthService, AuthGuard, PlateService, UserService, ManagedocsService, {
     provide: HTTP_INTERCEPTORS,
     useClass: TokenInterceptorService,
     multi: true
