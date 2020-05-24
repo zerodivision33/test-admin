@@ -1,3 +1,4 @@
+import { UserService } from './user.service';
 import { TokenInterceptorService } from './token-interceptor.service';
 import { AuthGuard } from './auth.guard';
 import { AuthService } from './auth.service';
@@ -35,7 +36,7 @@ import { PlatesComponent } from './pages/plates/plates.component';
     AuthLayoutComponent,
     PlatesComponent
   ],
-  providers: [AuthService, AuthGuard, PlateService, {
+  providers: [AuthService, AuthGuard, PlateService, UserService, {
     provide: HTTP_INTERCEPTORS,
     useClass: TokenInterceptorService,
     multi: true
