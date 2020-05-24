@@ -19,14 +19,14 @@ export class NavbarComponent implements OnInit {
   constructor(location: Location,  private element: ElementRef, private router: Router, private _authService: AuthService, private _userService:  UserService) {
     this.location = location;
     this._authService = _authService;
-    this.userData = []
+    this.userData = [];
   }
 
   ngOnInit() {
     this.listTitles = ROUTES.filter(listTitle => listTitle);
     this._userService.getUserDetails()
       .subscribe(
-        res => this.userData = res.data,
+        (response:  any) => this.userData = response.data,
         err => console.log(err)
     )
   }

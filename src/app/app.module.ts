@@ -18,6 +18,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app.routing';
 import { ComponentsModule } from './components/components.module';
 import { PlatesComponent } from './pages/plates/plates.component';
+import { ManagedocsComponent } from './managedocs/managedocs.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { PlatesComponent } from './pages/plates/plates.component';
     AppComponent,
     AdminLayoutComponent,
     AuthLayoutComponent,
-    PlatesComponent
+    PlatesComponent,
+    ManagedocsComponent
   ],
   providers: [AuthService, AuthGuard, PlateService, UserService, {
     provide: HTTP_INTERCEPTORS,
