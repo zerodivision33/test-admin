@@ -16,9 +16,10 @@ export class ManagedocsComponent implements OnInit {
   ngOnInit(): void {
     this._managedocsService.getUserDocs()
       .subscribe(
-        res => console.log(res),
-        err => console.log(err)
-    )
+        (res: any) => {
+          setTimeout(() => { this.managedocslist = res }, 1000)
+        },
+            err => console.log(err))
   }
 
 }
