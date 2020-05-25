@@ -20,6 +20,8 @@ import { AppRoutingModule } from './app.routing';
 import { ComponentsModule } from './components/components.module';
 import { PlatesComponent } from './pages/plates/plates.component';
 import { ManagedocsComponent } from './pages/managedocs/managedocs.component';
+import { UsersComponent } from './pages/users/users.component';
+import { UsersService } from './users.service';
 
 
 @NgModule({
@@ -37,9 +39,10 @@ import { ManagedocsComponent } from './pages/managedocs/managedocs.component';
     AdminLayoutComponent,
     AuthLayoutComponent,
     PlatesComponent,
-    ManagedocsComponent
+    ManagedocsComponent,
+    UsersComponent
   ],
-  providers: [AuthService, AuthGuard, PlateService, UserService, ManagedocsService, {
+  providers: [AuthService, AuthGuard, PlateService, UserService, ManagedocsService, UsersService ,{
     provide: HTTP_INTERCEPTORS,
     useClass: TokenInterceptorService,
     multi: true
