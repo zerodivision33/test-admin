@@ -9,18 +9,13 @@ declare interface RouteInfo {
     class: string;
 }
 export const ROUTES: RouteInfo[] = [
-    { path: '/dashboard', title: 'Dashboard',  icon: 'ni-tv-2 text-primary', class: '' },
-    { path: '/users', title: 'Users',  icon: 'ni-circle-08 text-red', class: '' },
-    { path: '/chefs', title: 'Chefs',  icon: 'ni-circle-08 text-yellow', class: '' },
-    { path: '/drivers', title: 'Drivers',  icon: 'ni-circle-08 text-green', class: '' },
-    { path: '/icons', title: 'Icons',  icon:'ni-planet text-blue', class: '' },
-    { path: '/maps', title: 'Maps',  icon:'ni-pin-3 text-orange', class: '' },
-    { path: '/user-profile', title: 'User profile',  icon:'ni-single-02 text-yellow', class: '' },
-    { path: '/tables', title: 'Tables',  icon:'ni-bullet-list-67 text-red', class: '' },
-    { path: '/login', title: 'Login',  icon:'ni-key-25 text-info', class: '' },
-    { path: '/register', title: 'Register',  icon:'ni-circle-08 text-pink', class: '' },
-    { path: '/plates', title: 'Plates',  icon:'ni-single-copy-04 text-green', class: '' },
-    { path: '/user-docs', title: 'User Docs',  icon:'ni-folder-17 text-info', class: '' }
+    { path: '/dashboard', title: 'Dashboard',  icon: 'ni-tv-2 text-cyan', class: '' },
+    { path: '/users', title: 'Users',  icon: 'fas fa-users text-primary', class: '' },
+    { path: '/chefs', title: 'Chefs',  icon: 'fas fa-utensils text-yellow', class: '' },
+    { path: '/drivers', title: 'Drivers',  icon: 'fas fa-shipping-fast text-orange', class: '' },
+    { path: '/user-profile', title: 'User profile',  icon:'far fa-user text-indigo', class: '' },
+    { path: '/plates', title: 'Plates',  icon:'fas fa-hamburger text-teal', class: '' },
+    { path: '/user-docs', title: 'User Docs',  icon:'far fa-folder-open text-red', class: '' }
 ];
 
 @Component({
