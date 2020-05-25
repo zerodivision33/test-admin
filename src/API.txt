@@ -1,0 +1,31 @@
+## Cheffy API Structure
+# Admin API (No need of this, Please remove this)
+{{url}}/manage/list/admin => This shouldn't give any response (Please Block it)
+
+[Remove special token verification to access below endpoints, 
+Instead keep only login with email and password]
+[Also give access to these end points with only user_type=admin]
+
+# Others API
+{{url}}/manage/list/user => This should give `list of users`
+{{url}}/manage/list/chef => This should give `list of chefs`
+{{url}}/manage/list/driver => This should give `list of drivers`
+
+
+# To accept/reject for adminVerification [Example for Driver with userId 2]
+{{url}}/manage/driver/accept/2 => To accept driver
+{{url}}/manage/driver/reject/2 => To reject driver
+
+
+# To accept/reject for adminVerification [Example for chef with userId 2]
+{{url}}/manage/chef/accept/2 => To accept chef
+{{url}}/manage/chef/reject/2 => To reject chef
+
+# No need to have seperate endpoint for user accept/reject
+
+
+
+
+# To edit individual users 
+
+

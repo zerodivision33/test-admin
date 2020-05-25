@@ -20,8 +20,8 @@
                   <th scope="col">Chef Id</th>
                   <th scope="col">Name</th>
                   <th scope="col">Email</th>
-                  <th scope="col">Location</th>
                   <th scope="col">Status</th>
+                  <th scope="col">Location</th>
                   <th scope="col">Created At</th>
                 </tr>
               </thead>
@@ -47,12 +47,12 @@
                   </td>
                   <td>
                     <span class="badge badge-dot mr-4">
-                      <i class="bg-warning"></i> {{chef.location_lat}}
+                      <i class="bg-warning"></i> {{chef.adminVerficaton ? 'approved' : 'pending'}}
                     </span>
                   </td>
                   <td>
                     <div class="d-flex align-items-center">
-                      <span class="mr-2"> {{chef.adminVerficaton ? 'approved' : 'pending'}} </span>
+                      <span class="mr-2"> {{chef.location_lat}} </span>
                       <div>
                       </div>
                     </div>

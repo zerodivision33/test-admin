@@ -46,20 +46,18 @@
                     {{user.email}}
                   </td>
                   <td>
+                    <div class="d-flex align-items-center">
+                      <span class="mr-2">{{user.location_lat}}</span>
+                    </div>
+                  </td>
+                  <td>
                     <span class="badge badge-dot mr-4">
-                      <i class="bg-warning"></i> {{user.location_lat}}
+                      <i class="bg-warning"></i> {{user.adminVerficaton ? 'approved' : 'pending'}}
                     </span>
                   </td>
                   <td>
                     <div class="d-flex align-items-center">
-                      <span class="mr-2"> {{user.adminVerficaton ? 'approved' : 'pending'}} </span>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="d-flex align-items-center">
                       <span class="mr-2">{{user.createdAt | date: 'dd/MM/yyyy' }}</span>
-                      <div>
-                      </div>
                     </div>
                   </td>
                 </tr>
