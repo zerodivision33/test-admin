@@ -13,11 +13,11 @@ export class ManagedocsComponent implements OnInit {
     this.managedocslist = []
    }
 
-  ngOnInit(): void {
+   ngOnInit(): void {
     this._managedocsService.getUserDocs()
-      .subscribe(
-        (res: any) => {
-          setTimeout(() => { this.managedocslist = res }, 1000)
+      .subscribe(res => {
+          console.log(res);
+          this.managedocslist = res;
         },
             err => console.log(err))
   }
