@@ -23,13 +23,14 @@
                   <th scope="col">Location</th>
                   <th scope="col">Status</th>
                   <th scope="col">Created At</th>
+                  <th scope="col">approve/reject</th>
                 </tr>
               </thead>
               <tbody>
                 <tr *ngFor="let driver of driversList">
                   <th>
-                    <div class="media-body">
-                      <span class="mb-0 text-sm">{{driver.id}}. </span>
+                    <div class="d-flex align-items-center">
+                      <span class="mr-2 text-sm">{{driver.id}}. </span>
                     </div>
                   </th>
                   <th scope="row">
@@ -46,22 +47,37 @@
                     {{driver.email}}
                   </td>
                   <td>
-                    <span class="badge badge-dot mr-4">
-                      <i class="bg-warning"></i> {{driver.location_lat}}
-                    </span>
+                    <div class="d-flex align-items-center">
+                      <span class="mr-2">{{driver.location_lat}}</span>
+                      <div>
+                      </div>
+                    </div>
                   </td>
                   <td>
+                    <div *ngIf=" (driver.adminVerficaton) ; else elsePending">
+                      <span class="badge badge-dot mr-4">
+                        <i class="bg-success"></i> approved
+                      </span>
+                    </div>
+                    <ng-template #elsePending>
+                      <span class="badge badge-dot mr-4">
+                        <i class="bg-warning"></i> pending
+                      </span>
+                    </ng-template>
+                    </td>
+                  <td>
                     <div class="d-flex align-items-center">
-                      <span class="mr-2"> {{driver.adminVerficaton ? 'approved' : 'pending'}} </span>
+                      <span class="mr-2">{{driver.createdAt | date: 'dd/MM/yyyy' }}</span>
                       <div>
                       </div>
                     </div>
                   </td>
                   <td>
                     <div class="d-flex align-items-center">
-                      <span class="mr-2">{{driver.createdAt | date: 'dd/MM/yyyy' }}</span>
-                      <div>
-                      </div>
+                      <span class="mr-2">
+                        <button type="button" class="btn btn-success btn-circle btn-md"><i class="fa fa-check"></i></button> 
+                        <button type="button" class="btn btn-danger btn-circle btn-md"><i class="fa fa-times"></i></button> 
+                      </span>
                     </div>
                   </td>
                 </tr>

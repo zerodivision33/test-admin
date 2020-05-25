@@ -20,9 +20,10 @@
                   <th scope="col">Chef Id</th>
                   <th scope="col">Name</th>
                   <th scope="col">Email</th>
-                  <th scope="col">Status</th>
                   <th scope="col">Location</th>
+                  <th scope="col">Status</th>
                   <th scope="col">Created At</th>
+                  <th scope="col">approve/reject</th>
                 </tr>
               </thead>
               <tbody>
@@ -45,11 +46,7 @@
                   <td>
                     {{chef.email}}
                   </td>
-                  <td>
-                    <span class="badge badge-dot mr-4">
-                      <i class="bg-warning"></i> {{chef.adminVerficaton ? 'approved' : 'pending'}}
-                    </span>
-                  </td>
+                  
                   <td>
                     <div class="d-flex align-items-center">
                       <span class="mr-2"> {{chef.location_lat}} </span>
@@ -58,10 +55,30 @@
                     </div>
                   </td>
                   <td>
+                    <div *ngIf=" (chef.adminVerficaton) ; else elsePending">
+                      <span class="badge badge-dot mr-4">
+                        <i class="bg-success"></i> approved
+                      </span>
+                    </div>
+                    <ng-template #elsePending>
+                      <span class="badge badge-dot mr-4">
+                        <i class="bg-warning"></i> pending
+                      </span>
+                    </ng-template>
+                    </td>
+                  <td>
                     <div class="d-flex align-items-center">
                       <span class="mr-2">{{chef.createdAt | date: 'dd/MM/yyyy' }}</span>
                       <div>
                       </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="d-flex align-items-center">
+                      <span class="mr-2">
+                        <button type="button" class="btn btn-success btn-circle btn-md"><i class="fa fa-check"></i></button> 
+                        <button type="button" class="btn btn-danger btn-circle btn-md"><i class="fa fa-times"></i></button> 
+                      </span>
                     </div>
                   </td>
                 </tr>
