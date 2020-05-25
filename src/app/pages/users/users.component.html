@@ -27,22 +27,20 @@
               </thead>
               <tbody>
                 <tr *ngFor="let user of usersList">
-                  <td>
-                    <div class="d-flex align-items-center">
-                      <span class="mr-2"> {{user.id}} </span>
-                      <div>
-                      </div>
-                    </div>
-                  </td>
                   <th scope="row">
                     <div class="media align-items-center">
                       <a href="javascript:void(0)" class="avatar rounded-circle mr-3">
                         <img alt="Image" src=" {{user.imagePath}} ">
                       </a>
                       <div class="media-body">
-                        <span class="mb-0 text-sm">{{user.name}}</span>
+                        <span class="text-sm">{{user.id}}. </span>
                       </div>
                     </div>
+                  </th>
+                  <th>
+                      <div class="media-body">
+                        <span class="mb-0 text-sm">{{user.name}}</span>
+                      </div>
                   </th>
                   <td>
                     {{user.email}}
@@ -54,7 +52,7 @@
                   </td>
                   <td>
                     <div class="d-flex align-items-center">
-                      <span class="mr-2"> {{user.adminVerficaton}} </span>
+                      <span class="mr-2"> {{user.adminVerficaton ? 'approved' : 'pending'}} </span>
                       <div>
                       </div>
                     </div>
