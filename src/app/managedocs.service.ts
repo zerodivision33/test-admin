@@ -13,6 +13,6 @@ export class ManagedocsService {
       "x-access-token",
       localStorage.getItem("token")
     );
-    return this.http.get(this._userDocsUrl, { headers: header });
+    return this.http.get<any>(this._userDocsUrl, { headers: header });
   }
 }
