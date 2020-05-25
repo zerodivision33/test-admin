@@ -24,6 +24,8 @@ import { UsersComponent } from './pages/users/users.component';
 import { UsersService } from './users.service';
 import { ChefsComponent } from './pages/chefs/chefs.component';
 import { ChefsService } from './chefs.service';
+import { DriversComponent } from './pages/drivers/drivers.component';
+import { DriversService } from './drivers.service';
 
 
 @NgModule({
@@ -43,9 +45,10 @@ import { ChefsService } from './chefs.service';
     PlatesComponent,
     ManagedocsComponent,
     UsersComponent,
-    ChefsComponent
+    ChefsComponent,
+    DriversComponent
   ],
-  providers: [AuthService, AuthGuard, PlateService, UserService, ManagedocsService, UsersService, ChefsService, {
+  providers: [AuthService, AuthGuard, PlateService, UserService, ManagedocsService, UsersService, ChefsService, DriversService, {
     provide: HTTP_INTERCEPTORS,
     useClass: TokenInterceptorService,
     multi: true
