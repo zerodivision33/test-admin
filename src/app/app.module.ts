@@ -22,6 +22,8 @@ import { PlatesComponent } from './pages/plates/plates.component';
 import { ManagedocsComponent } from './pages/managedocs/managedocs.component';
 import { UsersComponent } from './pages/users/users.component';
 import { UsersService } from './users.service';
+import { ChefsComponent } from './pages/chefs/chefs.component';
+import { ChefsService } from './chefs.service';
 
 
 @NgModule({
@@ -40,9 +42,10 @@ import { UsersService } from './users.service';
     AuthLayoutComponent,
     PlatesComponent,
     ManagedocsComponent,
-    UsersComponent
+    UsersComponent,
+    ChefsComponent
   ],
-  providers: [AuthService, AuthGuard, PlateService, UserService, ManagedocsService, UsersService ,{
+  providers: [AuthService, AuthGuard, PlateService, UserService, ManagedocsService, UsersService, ChefsService, {
     provide: HTTP_INTERCEPTORS,
     useClass: TokenInterceptorService,
     multi: true
