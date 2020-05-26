@@ -10,11 +10,11 @@ export class ChefsService {
 
   constructor(private http: HttpClient) { }
 
-  getChefsList(){
+  getChefsList(page: number, pageSize: number){
     let header = new HttpHeaders().set(
       "x-access-token",
       localStorage.getItem("token")
     );
-    return this.http.get<any>(this._chefsUrl, {headers:header});
+    return this.http.get<any>(`${this._chefsUrl}?page=${page}&pageSize=${pageSize}`, {headers:header});
   }
 }

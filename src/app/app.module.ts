@@ -17,6 +17,7 @@ import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app.routing';
+import { NgxPaginationModule } from 'ngx-pagination';
 import { ComponentsModule } from './components/components.module';
 import { PlatesComponent } from './pages/plates/plates.component';
 import { ManagedocsComponent } from './pages/managedocs/managedocs.component';
@@ -36,7 +37,8 @@ import { DriversService } from './drivers.service';
     ComponentsModule,
     NgbModule,
     RouterModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgxPaginationModule
   ],
   declarations: [
     AppComponent,
