@@ -85,9 +85,13 @@
                 <!-- end of first row -->
               </tbody>
             </table>
-          </div>
-          <ngb-pagination [collectionSize]="chefsList.length" [(page)]="page" [maxSize]="10" [rotate]="true" [ellipses]="false" [boundaryLinks]="true"></ngb-pagination>
-        </div>
+            <div class="card-footer py-4">
+              <nav aria-label="...">
+                <ul class="pagination justify-content-end mb-0">
+                  <ngb-pagination [collectionSize]="chefsList.length" [(page)]="page" [maxSize]="10" [rotate]="true" [ellipses]="false" [boundaryLinks]="true"></ngb-pagination>
+                </ul>
+              </nav>
+            </div>
       </div>
     </div>
   </div>

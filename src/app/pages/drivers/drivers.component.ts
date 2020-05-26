@@ -7,6 +7,9 @@ import { DriversService } from 'src/app/drivers.service';
   styleUrls: ['./drivers.component.css']
 })
 export class DriversComponent implements OnInit {
+  
+  public page = 1;
+  pageSize = 10;
 
   driversList: any;
   constructor(private _driversService : DriversService) { 
@@ -14,11 +17,11 @@ export class DriversComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this._driversService.getDriversList()
+    this._driversService.getDriversList(this.page, this.pageSize)
     .subscribe(
       res => this.driversList = res,
       err => console.log(err)
-    )
+    );
   }
 
 }

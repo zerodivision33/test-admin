@@ -10,11 +10,11 @@ export class DriversService {
 
   constructor(private http: HttpClient) { }
 
-  getDriversList() {
+  getDriversList(page: number, pageSize: number) {
     let header = new HttpHeaders().set(
       "x-access-token",
       localStorage.getItem("token")
     );
-    return this.http.get<any>(this._driversUrl, {headers:header});
+    return this.http.get<any>(`${this._driversUrl}?page=${page}&pageSize=${pageSize}`, {headers:header});
   }
 }
