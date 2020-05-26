@@ -52,7 +52,7 @@ import { DriversService } from './drivers.service';
   ],
   providers: [AuthService, AuthGuard, PlateService, UserService, ManagedocsService, UsersService, ChefsService, DriversService, {
     provide: HTTP_INTERCEPTORS,
-    useClass: TokenInterceptorService,
+    useClass: TokenInterceptorService, 
     multi: true
   }],
   bootstrap: [AppComponent]

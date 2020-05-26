@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DriversService } from 'src/app/drivers.service';
+import { Router } from '@angular/router';
+import { AcceptService } from 'src/app/accept.service';
 
 @Component({
   selector: 'app-drivers',
@@ -12,7 +14,8 @@ export class DriversComponent implements OnInit {
   pageSize = 10;
 
   driversList: any;
-  constructor(private _driversService : DriversService) { 
+  constructor(private _driversService : DriversService, private _router: Router,
+    private _acceptService: AcceptService) { 
     this.driversList = []
   }
 
@@ -22,6 +25,28 @@ export class DriversComponent implements OnInit {
       res => this.driversList = res,
       err => console.log(err)
     );
+  }
+
+  acceptDriver(id){
+    this._driversService.acceptDriver(id)
+    .subscribe(
+      res => {
+        console.log(res);
+        window.location.reload();
+      },
+      err => console.log(err)
+    )
+  }
+
+  rejectDriver(id){
+    this._driversService.rejectDriver(id)
+    .subscribe(
+      res => {
+        console.log(res);
+        window.location.reload();
+      },
+      err => console.log(err)
+    )
   }
 
 }

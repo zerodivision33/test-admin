@@ -76,8 +76,8 @@
                   <td>
                     <div class="d-flex align-items-center">
                       <span class="mr-2">
-                        <button type="button" class="btn btn-success btn-circle btn-md"><i class="fa fa-check"></i></button> 
-                        <button type="button" class="btn btn-danger btn-circle btn-md"><i class="fa fa-times"></i></button> 
+                        <button (click)="acceptChef(chef.id)" type="button" class="btn btn-success btn-circle btn-md"><i class="fa fa-check"></i></button> 
+                        <button (click)="rejectChef(chef.id)" type="button" class="btn btn-danger btn-circle btn-md"><i class="fa fa-times"></i></button> 
                       </span>
                     </div>
                   </td>
